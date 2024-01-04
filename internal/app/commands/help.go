@@ -9,7 +9,6 @@ func (c *Commander) Help(inputMessage *tgbotapi.Message) {
 		"/help - help\n"+
 			"/list - list products",
 	)
-
 	c.bot.Send(msg)
 }
 
