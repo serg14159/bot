@@ -37,6 +37,8 @@ func main() {
 	for update := range updates {
 		if update.Message != nil { // If we got a message
 			commander.HandleUpdate(update)
+		} else if update.CallbackQuery != nil {
+			commander.HandleUpdate(update)
 		}
 	}
 }
