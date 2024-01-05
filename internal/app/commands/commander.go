@@ -27,18 +27,14 @@ func (c *Commander) HandleUpdate(update tgbotapi.Update) {
 		}
 	}()
 
-	log.Printf("111")
-
 	if update.CallbackQuery != nil {
 		msg := tgbotapi.NewMessage(
 			update.CallbackQuery.Message.Chat.ID,
 			"Data:"+update.CallbackQuery.Data,
 		)
 		c.bot.Send(msg)
-		log.Printf("222")
 		return
 	}
-	log.Printf("333")
 
 	if update.Message != nil { // If we got a message
 
